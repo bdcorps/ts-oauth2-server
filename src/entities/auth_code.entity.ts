@@ -12,4 +12,5 @@ export interface OAuthAuthCode {
   user?: OAuthUser | null;
   client: OAuthClient;
   scopes: OAuthScope[];
+  createdAt: Date;
 }

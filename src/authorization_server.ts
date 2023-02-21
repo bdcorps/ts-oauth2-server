@@ -57,13 +57,13 @@ export class AuthorizationServer {
       OAuthUserRepository,
       JwtInterface,
     ] = [
-      this.authCodeRepository,
-      this.clientRepository,
-      this.tokenRepository,
-      this.scopeRepository,
-      this.userRepository,
-      this.jwt,
-    ];
+        this.authCodeRepository,
+        this.clientRepository,
+        this.tokenRepository,
+        this.scopeRepository,
+        this.userRepository,
+        this.jwt,
+      ];
     this.availableGrants = {
       authorization_code: new AuthCodeGrant(...repos),
       client_credentials: new ClientCredentialsGrant(...repos),
@@ -105,10 +105,11 @@ export class AuthorizationServer {
       if (!grantType.canRespondToAccessTokenRequest(req)) {
         continue;
       }
+
       const accessTokenTTL = this.grantTypeAccessTokenTTL[grantType.identifier];
+
       return grantType.respondToAccessTokenRequest(req, accessTokenTTL);
     }
-
     throw OAuthException.unsupportedGrantType();
   }
 

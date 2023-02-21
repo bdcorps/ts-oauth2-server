@@ -60,7 +60,7 @@ export abstract class AbstractGrant implements GrantInterface {
     protected readonly scopeRepository: OAuthScopeRepository,
     protected readonly userRepository: OAuthUserRepository,
     protected readonly jwt: JwtInterface,
-  ) {}
+  ) { }
 
   async makeBearerTokenResponse(
     client: OAuthClient,
@@ -224,6 +224,7 @@ export abstract class AbstractGrant implements GrantInterface {
   ): Promise<OAuthToken> {
     const accessToken = await this.tokenRepository.issueToken(client, scopes, user);
     accessToken.accessTokenExpiresAt = accessTokenTTL.getEndDate();
+
     await this.tokenRepository.persist(accessToken);
     return accessToken;
   }

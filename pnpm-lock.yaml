@@ -69,10 +69,12 @@ importers:
       '@prisma/client': ^4.2.1
       '@types/bcryptjs': ^2.4.2
       '@types/body-parser': ^1.19.2
+      '@types/cors': ^2.8.13
       '@types/express': ^4.17.13
       '@types/node': ^18.7.13
       bcryptjs: ^2.4.3
       body-parser: ^1.20.0
+      cors: ^2.8.5
       dotenv: ^16.0.1
       express: ^4.18.1
       prisma: ^4.2.1
@@ -84,11 +86,13 @@ importers:
       '@prisma/client': 4.2.1_prisma@4.2.1
       bcryptjs: 2.4.3
       body-parser: 1.20.0
+      cors: 2.8.5
       dotenv: 16.0.1
       express: 4.18.1
     devDependencies:
       '@types/bcryptjs': 2.4.2
       '@types/body-parser': 1.19.2
+      '@types/cors': 2.8.13
       '@types/express': 4.17.13
       '@types/node': 18.7.13
       prisma: 4.2.1
@@ -1596,6 +1600,12 @@ packages:
 
   /@types/cookiejar/2.1.2:
     resolution: {integrity: sha512-t73xJJrvdTjXrn4jLS9VSGRbz0nUY3cl2DMGDU48lKl+HR9dbbjW2A9r3g40VA++mQpy6uuHg33gy7du2BKpog==}
+    dev: true
+
+  /@types/cors/2.8.13:
+    resolution: {integrity: sha512-RG8AStHlUiV5ysZQKq97copd2UmVYw3/pRMLefISZ3S1hK104Cwm7iLQ3fTKx+lsUH2CE8FlLaYeEA2LSeqYUA==}
+    dependencies:
+      '@types/node': 18.7.13
     dev: true
 
   /@types/express-serve-static-core/4.17.30:
@@ -4008,6 +4018,14 @@ packages:
 
   /core-util-is/1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
+
+  /cors/2.8.5:
+    resolution: {integrity: sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==}
+    engines: {node: '>= 0.10'}
+    dependencies:
+      object-assign: 4.1.1
+      vary: 1.1.2
+    dev: false
 
   /cosmiconfig/5.2.1:
     resolution: {integrity: sha512-H65gsXo1SKjf8zmrJ67eJk8aIRKV5ff2D4uKZIBZShbhGSpEmsQOPW/SKMKYhSTrqR7ufy6RP69rPogdaPh/kA==}

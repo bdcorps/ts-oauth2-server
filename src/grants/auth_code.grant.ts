@@ -120,6 +120,8 @@ export class AuthCodeGrant extends AbstractAuthorizedGrant {
   }
 
   canRespondToAuthorizationRequest(request: RequestInterface): boolean {
+    //TODO make this check req body
+    return true;
     return this.getQueryStringParameter("response_type", request) === "code";
   }
 
@@ -296,6 +298,7 @@ export class AuthCodeGrant extends AbstractAuthorizedGrant {
     authCode.codeChallengeMethod = codeChallengeMethod;
     authCode.scopes = [];
     scopes.forEach(scope => authCode.scopes.push(scope));
+
     await this.authCodeRepository.persist(authCode);
     return authCode;
   }

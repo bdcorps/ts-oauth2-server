@@ -1,10 +1,8 @@
+import { CodeChallengeMethod, OAuthAuthCode } from "@jmondi/oauth2-server";
 import {
-  OAuthClient as ClientModel,
-  OAuthAuthCode as AuthCodeModel,
-  OAuthScope as ScopeModel,
-  User as UserModel,
+  OAuthAuthCode as AuthCodeModel, OAuthClient as ClientModel, OAuthScope as ScopeModel,
+  User as UserModel
 } from "@prisma/client";
-import { OAuthAuthCode, CodeChallengeMethod } from "@jmondi/oauth2-server";
 
 import { Client } from "./client";
 import { Scope } from "./scope";

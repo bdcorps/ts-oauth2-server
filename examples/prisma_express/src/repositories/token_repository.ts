@@ -7,7 +7,7 @@ import { Token } from "../entities/token";
 import { User } from "../entities/user";
 
 export class TokenRepository implements OAuthTokenRepository {
-  constructor(private readonly repo: Prisma.OAuthTokenDelegate<"rejectOnNotFound">) {}
+  constructor(private readonly repo: Prisma.OAuthTokenDelegate<"rejectOnNotFound">) { }
 
   async findById(accessToken: string): Promise<Token> {
     const token = await this.repo.findUnique({
@@ -35,6 +35,7 @@ export class TokenRepository implements OAuthTokenRepository {
       user: user,
       userId: user?.id ?? null,
       scopes,
+      createdAt: new Date(),
     });
   }
 

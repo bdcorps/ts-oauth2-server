@@ -1,5 +1,5 @@
-import { Prisma } from "@prisma/client";
 import { DateInterval, generateRandomToken, OAuthAuthCode, OAuthAuthCodeRepository } from "@jmondi/oauth2-server";
+import { Prisma } from "@prisma/client";
 
 import { AuthCode } from "../entities/auth_code";
 import { Client } from "../entities/client";
@@ -7,7 +7,7 @@ import { Scope } from "../entities/scope";
 import { User } from "../entities/user";
 
 export class AuthCodeRepository implements OAuthAuthCodeRepository {
-  constructor(private readonly repo: Prisma.OAuthAuthCodeDelegate<"rejectOnNotFound">) {}
+  constructor(private readonly repo: Prisma.OAuthAuthCodeDelegate<"rejectOnNotFound">) { }
 
   async getByIdentifier(authCodeCode: string): Promise<AuthCode> {
     const entity = await this.repo.findUnique({
@@ -39,6 +39,7 @@ export class AuthCodeRepository implements OAuthAuthCodeRepository {
       user,
       userId: user?.id ?? null,
       scopes,
+      createdAt: new Date(),
     });
   }
 
